@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = "dev"
 
 # Accessing my key
-gmaps = googlemaps.Client(key = 'AIzaSyAgbtLGPnoZfOiu4a2EdmB7aEfnTLJ_Sd8')
+gmaps = googlemaps.Client(key = 'Replace this with your key')
 
 
 @app.route('/')

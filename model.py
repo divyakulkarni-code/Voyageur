@@ -92,6 +92,9 @@ class Trip_Sight(db.Model):
     trips = db.relationship('Trip', backref = 'trip_sight')
     sights = db.relationship('Sight', backref = 'trip_sight' )
 
+    def __repr__(self):
+        return f'<Trip_Sight trip_id ={self.trip_id} sight_id={self.sight_id}>'
+
 
 def connect_to_db(flask_app, db_uri='postgresql:///travel', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri

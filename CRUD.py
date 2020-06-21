@@ -1,5 +1,6 @@
 from model import db, Traveler, Trip, Sight, Trip_Sight, connect_to_db
 
+''' Creating Traveler table'''
 
 def create_User(first_name, last_name, user_name, email_id, password):
     traveler = Traveler(first_name = first_name, 
@@ -16,6 +17,8 @@ def create_User(first_name, last_name, user_name, email_id, password):
 
 def get_user_by_user_name(user_name):
     return Traveler.query.filter(Traveler.user_name == user_name).first()
+
+''' Creating Trip table'''
     
 def create_Trip(trip_name, trip_city, travel_date_from, travel_date_to):
     trip = Trip(trip_name = trip_name,
@@ -29,8 +32,17 @@ def create_Trip(trip_name, trip_city, travel_date_from, travel_date_to):
 
     return trip
 
+''' Retireveing trip by trip id'''
+
 def get_trip_id(trip_id):
     return Trip.query.filter(Trip.trip_id == trip_id).first()
+
+''' Retireveing trip by traveler id'''
+
+def get_trip_by_traveler_id(traveler_id):
+    return Trip.query.filter(Trip.traveler_id == traveler_id).all()
+
+''' Creating Sight table'''
 
 def create_Sight(place_id,sight_name):
     sight = Sight(place_id = place_id,
@@ -42,9 +54,16 @@ def create_Sight(place_id,sight_name):
 
     return sight 
 
-def get_sight(sight):
-    return Sight.query.filter(Sight.sight_name == sight).first()
+'''Retrieving sight by place id --- OPTIONAL / TODO -Delete Later'''
+def get_sight_by_place_id(place_id):
+    return Sight.query.filter(Sight.place_id == place_id).first()
 
+'''Retrieving all sights by sight_id'''
+
+def get_sights_by_sight_id(sight_id):
+    return Sight.query.filter(Sight.sight_id == sight_id).first()
+
+'''Creating Trip_Sight table'''
 
 def create_Trip_Sight(trip_id, sight_id):
     trip_sight = Trip_Sight(trip_id = trip_id,
@@ -55,7 +74,12 @@ def create_Trip_Sight(trip_id, sight_id):
     db.session.commit()
 
     return trip_sight
- 
+
+'''Retriving all trips by trip id '''
+
+def get_all_trips_by_trip_id(trip_id):
+    return Trip_Sight.query.filter(Trip_Sight.trip_id == trip_id).all()
+
 
 if __name__ == '__main__':
     from server import app

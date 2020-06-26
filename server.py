@@ -170,11 +170,15 @@ def fetch_itinerary():
         sights_in_a_trip = CRUD.get_all_sights_by_trip_id(trip.trip_id)
         for sight_in_a_trip in sights_in_a_trip:
             sight = CRUD.get_sight_by_sight_id(sight_in_a_trip.sight_id)
-
+            
             # Fetch lat, lng of a sight
-            # place_detail = CRUD.get_lat_lng_by_place_id(sight.place_id)
+            place_detail = CRUD.get_lat_lng_by_place_id(sight.place_id)
+            
+            # Merging sight and place_details dict into result
+            result_sight = {**sight.to_dict(), **place_detail.to_dict()}
+            
+            sight_detail_lst.append(result_sight)
 
-            sight_detail_lst.append(sight.to_dict())
         trip_sight[trip.trip_id] = (trip.to_dict(),sight_detail_lst)
 
     return jsonify(trip_sight) 
@@ -203,13 +207,6 @@ def delete_trip(trip_id):
         print(deleted_trip_sights)
 
     return "Deleted Trip Successfully!"
-
-@app.route('/map_marker')
-def map_marker():
-    place = CRUD.get_lat_lng_by_place_id(places)
-    
-
-    return 
     
 
 if __name__ == '__main__':

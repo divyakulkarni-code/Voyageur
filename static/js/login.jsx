@@ -22,16 +22,16 @@ class Login extends React.Component {
                     <div className = "form">
                         <div className = "form-group">
                             <label htmlFor="user_name">Username</label>
-                            <input type = "text" name = "user_name" placeholder="user_name" ></input>
+                            <input type = "text" name = "user_name" placeholder="User Name" ></input>
                         </div>
                         <div className = "form-group">
                             <label htmlFor="password">Password</label>
-                            <input type = "text" name = "password" placeholder="password" ></input>
+                            <input type = "text" name = "password" placeholder="Password" ></input>
                         </div>
                     </div>
                 </div>
                 <div className = "footer">
-                    <input type="submit" className = "btn" value = 'Login'>
+                    <input type="submit" className = "btn btn-primary" value = 'Login'>
                     </input>
                     
                     <a href="/register">

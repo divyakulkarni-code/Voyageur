@@ -22,7 +22,7 @@ class FavoriteCity extends React.Component {
             <label>
             Select City:
             <select value = {this.state.value} onChange = {this.handleChange} >
-                <option value = "selecte_city">Select City</option>
+                <option value = "selected_city">Select City</option>
                 <option value = "SFO">San Francisco</option>
                 <option value = "Miami">Miami</option>
                 <option value = "Boston">Boston</option>

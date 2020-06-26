@@ -3,7 +3,7 @@ import json
 from random import choice, randint
 from datetime import datetime
 
-import crud
+import CRUD
 import model
 import server
 

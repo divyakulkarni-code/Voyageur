@@ -21,7 +21,13 @@ class Sight extends React.Component {
     handlePopertyChange() {
             if (this.props.selectedCityValue != "") {
             console.log('Making API Call');
-            fetch('/choose_trip/'+this.props.selectedCityValue)
+            fetch('/choose_trip/'+this.props.selectedCityValue,
+            {
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
             .then(res => res.json())
             .then((data) => {
               this.setState({ sights: data })
@@ -32,7 +38,7 @@ class Sight extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props.selectedCityValue);
+        console.log("componentDidMount",this.props.selectedCityValue);
         this.handlePopertyChange();
         document.addEventListener("keyup", this.handleKeyUp, false);
         document.addEventListener("keydown", this.handleKeyDown, false);
@@ -40,9 +46,9 @@ class Sight extends React.Component {
 
     }
     componentDidUpdate(prevProps) {
-        console.log(this.props.selectedCityValue);
+        console.log("componentDidUpdate",this.props.selectedCityValue);
         if (prevProps.selectedCityValue != this.props.selectedCityValue) {
-            console.log('componentDidUpdate');
+            console.log('componentDidUpdate with different value');
             this.handlePopertyChange();
         }
         
@@ -116,16 +122,15 @@ class Sight extends React.Component {
 
     renderItems() {
         const { sights, selectedItems } = this.state;
-        return  Object.entries( this.state.sights).map(([key, value]) =>
-                    <li key = { key.toString() }>
-                    <input onChange = { this.handleSelectItem }
-                    type = "checkbox"
-                    checked = { selectedItems.includes(key)}
-                    value = { key.toString() }
-                    id = { `item-${key}`}/>
-                    <label htmlFor = {`item-${key}`}> {value}</label>
-
-                </li>
+        return  Object.entries( sights).map(([key, value]) =>
+            <li key={key.toString()}>
+                <input onChange={this.handleSelectItem}
+                    type="checkbox"
+                    checked={selectedItems.includes(key)}
+                    value={key.toString()}
+                    id={`item-${key}`} />
+                <label style = {{marginLeft: '30px'}} htmlFor={`item-${key}`}> {value}</label>
+            </li>
             
         );
     }
@@ -159,7 +164,7 @@ class Sight extends React.Component {
                         </ul>
                         </div>
                         <div>
-                            <button className = "btn" onClick = {this.checkStatus}> Let's Travel </button>
+                            <button className = "btn btn-primary" onClick = {this.checkStatus}> Let's Travel </button>
                         </div>
                 </div>
             );

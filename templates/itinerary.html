@@ -3,11 +3,16 @@
 {% block title %} My itinerary {% endblock %}
 
 {% block body %}
-<h1>Final Itinerary</h1>
     <div id="app"></div>
+    {% for msg in get_flashed_messages() %}
+      <div id="flashmsg" style="visibility: hidden; height: 0px;" class="flash-msg" ref ="flashDev">
+        {{ msg }}
+      </div>
+    {% endfor %}
 {% endblock %}
 
 {% block js %}
+<script src="/static/js/navbar.jsx" type="text/jsx"></script>
 <script src="/static/js/itinerary.jsx" type="text/jsx"></script>
 
 {% endblock %}

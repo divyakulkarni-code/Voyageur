@@ -16,6 +16,11 @@ gmaps_key = 'AIzaSyAgbtLGPnoZfOiu4a2EdmB7aEfnTLJ_Sd8'
 @app.route('/')
 def index():
     """View Login"""
+    return render_template('landing_page.html')
+
+@app.route('/login')
+def login():
+    """View Login"""
     return render_template('login.html')
 
 @app.route('/register', methods = ['GET','POST'])
@@ -40,7 +45,7 @@ def register():
         CRUD.create_User(first_name, last_name, user_name, email, password)
         flash('Account created! Please log in') 
 
-        return redirect('/')   
+        return redirect('/login')   
 
 @app.route('/handlelogin', methods = ['GET','POST'])
 def handle_login():
@@ -56,10 +61,10 @@ def handle_login():
             return redirect('/itinerary')
         else:
             flash("Wrong Password!")
-            return redirect('/')
+            return redirect('/login')
     else:
         flash("Username incorrect or doesn't exist")
-        return redirect('/')
+        return redirect('/login')
 
 @app.route('/tripcitydetails')
 def trip_city_details():
@@ -101,9 +106,9 @@ def choose_trip(city):
             places = result['place_id']
             lat = result['geometry']['location']['lat']
             lng = result['geometry']['location']['lng']
-            vicinity_addr = result['vicinity']
-            glb_rating = result['rating']
-            totnb_reviews = result['user_ratings_total']
+            vicinity_addr = result.get('vicinity',0)
+            glb_rating = result.get('rating', 0)
+            totnb_reviews = result.get('user_ratings_total',0)
 
             place = CRUD.get_lat_lng_by_place_id(places)
             if place:

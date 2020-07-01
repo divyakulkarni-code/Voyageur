@@ -8,6 +8,7 @@ class GoogleMap extends React.Component {
     googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key={ PASTE YOUR API KEY HERE REMOVE CURLY BRACES TOO}&libraries=places`
     window.document.body.appendChild(googleMapScript)
 
+    
     // changed func here-had error in map function
     googleMapScript.addEventListener("load", () => { 
       this.googleMap = this.createGoogleMap(),

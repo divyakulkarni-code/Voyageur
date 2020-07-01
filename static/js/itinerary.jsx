@@ -131,59 +131,91 @@ class Itinerary extends React.Component {
     console.log("this.state.itinerary", this.state.itinerary);
     
     return Object.entries(this.state.itinerary).map(([trip_id, trip]) => {
-      return <div key={trip_id.toString()}>
-        
-        <div
-          id={`item-${trip_id}`}
-          ref={this.googleMapRef}
-          style={{ width: '400px', height: '300px' }}
-        >
-        </div>
-        
-        <div className="trip_name">
-          <div>{trip[0].trip_name}</div>
-          <div>{trip[0].trip_city}</div>
-          <div>{trip[0].travel_date_from}</div>
-          <div>{trip[0].travel_date_to}</div>
-          <div>
-            <a href="javascript:void(0);" onClick={this.removeTrip.bind(this, trip[0].trip_id)}>
-              Delete Trip
+      return <div className = "container-itinerary" key={trip_id.toString()}>
+        <table>
+        <thead></thead>
+        <tbody>
+            <tr>
+              <td className="trip-info">
+                <div>Trip Name : {trip[0].trip_name}</div>
+                <div>{trip[0].trip_city}</div>
+                <div>{trip[0].travel_date_from}</div>
+                <div>{trip[0].travel_date_to}</div>
+                <div>
+                  <a href="javascript:void(0);" onClick={this.removeTrip.bind(this, trip[0].trip_id)}>
+                    Delete Trip
                     </a>
-          </div>
-        </div>
-
-        <div className="sight_name">
-          <div>{trip[1].map(sight => (
-            <div>
-              <li key={sight.sight_id.toString()}>
-                {sight.sight_name}
-              </li>
-              
-              <div>
-                <a href="javascript:void(0);" onClick={this.removeSightItem.bind(this, trip[0].trip_id, trip[0].traveler_id, sight.sight_id, sight.sight_name)}>
-                  Remove Sight
-                    </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+            <td>
+              <div
+                id={`item-${trip_id}`}
+                ref={this.googleMapRef}
+                style={{ width: '600px', height: '300px' }}
+              >
               </div>
-              
-            </div>
-          ))}
-          </div>
-        </div> 
-        
-        
+              </td>
+            </tr>
+            <tr>
+            <td>
+              <div className="sight_name">
+                <div>{trip[1].map(sight => (
+                  <div>
+                    <table>
+                      <thead></thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            {sight.sight_name}
+                          </td>
+                          <td>
+                            <a className="remove-sight-item" href="javascript:void(0);" onClick={this.removeSightItem.bind(this, trip[0].trip_id, trip[0].traveler_id, sight.sight_id, sight.sight_name)}>
+                              Remove Sight
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                ))}
+                </div>
+              </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     });
+  }
+
+  handleFlashMessage() {
+    var name = React.findDOMNode(this.refs.flashDev).value;
+    return (<div>
+      Logged in as {name}
+    </div>);
   }
 
   render(){
     return (
       <div className='trip_sight'>
+        <div className="navclass"><Navbar/></div>
         <div>
-          {this.renderItems()}
+          {/* {this.handleFlashMessage()} */}
         </div>
-        <div>
-          <a href="/tripcitydetails" className="btn btn-primary">Create Trip</a>
-        </div>
+        <section className="content-container-itinerary">
+          <section className="row justify-content-center">
+            {this.renderItems()}
+          </section>
+        </section>
+        <section className="content-button">
+          <section className="row justify-content-center">
+            <div className='itinerary-button'>
+
+              <a href="/tripcitydetails" className="btn btn-primary">Create Trip</a>
+            </div></section>
+        </section>
       </div>
     );
   }

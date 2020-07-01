@@ -36,10 +36,3 @@ class FavoriteCity extends React.Component {
     }
 }
 
-
-
-
-// ReactDOM.render (
-//     <FavoriteCity />,
-//     document.getElementById("app")
-// );

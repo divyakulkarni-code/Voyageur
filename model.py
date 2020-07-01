@@ -136,13 +136,10 @@ class Place_Detail(db.Model):
                         nullable = False,
                         ) 
     vicinity_addr = db.Column(db.String,
-                        nullable = False,
                         ) 
     glb_rating = db.Column(db.String,
-                        nullable = False,
                         ) 
     totnb_reviews = db.Column(db.String,
-                        nullable = False,
                         )
 
     def __repr__(self):

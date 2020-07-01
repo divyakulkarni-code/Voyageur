@@ -75,29 +75,33 @@ class Homepage extends React.Component {
             <div className="container-fluid">
             
                 <Navbar/>
-
-                <div className = "create-new-trip"> 
-                <h2> Create Trip</h2>
+                <div className = "space-conatiner"></div>
+                <div className = "jumbotron"> 
+                <h2 className = "display-4"> Create Trip</h2>
+                <hr className="my-4"></hr>
+                <div className = "input-elements">
                     <div className = "input-group">
                     <label> Trip Name </label> 
                         <input type = "text" id="tripName" name = "tripName"  placeholder="Trip Name" onChange = { this.tripNameHandler }/>              
                     </div>
-
                     <div className = "input-group">
                     <label> From </label> 
-                    <input type="date" id="fromDate" name="fromDate" onChange = { this.fromDateHandler }/>             
+                    <input type="date" id="fromDate" name="fromDate" placeholder="Date From" onChange = { this.fromDateHandler }/>             
                     </div>
-
                     <div className = "input-group">
                     <label> To </label> 
-                    <input type="date" id="toDate" name="toDate" onChange = { this.toDateHandler }/>             
+                    <input type="date" id="toDate" name="toDate" placeholder="Date To" onChange = { this.toDateHandler }/>             
+                    </div>
+                </div>
+                    <hr className="my-4"></hr>
+
+                    <div className="pick-cities">
+                        <FavoriteCity handleDropdownChange={this.dropdownChange} />
+
                     </div>
                 </div>
 
-                <div className ="pick-cities">
-                    <FavoriteCity handleDropdownChange = {this.dropdownChange}/>
-
-                </div>
+               
                 <div className = "sights">
                     <Sight 
                     selectedCityValue = {this.state.selectedCityValue} 

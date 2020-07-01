@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.main {
+    height: 800px;
+    width: 100%;
+    background-image: url("../img/landing_page.jpg");
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 1;
+}
+
+.banner {
+    height: 100%;
+    width: 100%;
+    /* background-image: url("../img/red-motor-scooter-parked-beside-curb-3284232.jpg");
+    -webkit-background-size:cover; */
+    /* -webkit-filter: blur(6px);
+    filter: blur(6px); */
+    /* background-size: cover; */
+    position: relative;
+    z-index: 1;
+
+}
+
+
+.banner:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+
+}
+
+.banner ul{
+    list-style: none;
+    color: #fff;
+}
+
+.logo{
+    float:left;
+    width: 45%;
+    text-transform: uppercase;
+}
+.logo h2{
+    padding-left: 60px;
+    color: #fff;
+}
+
+.menu-area{
+    width: 55%;
+    display: inline-block;
+    overflow: hidden;
+    text-align:right;
+}
+
+.menu-area ul li:hover {
+    color:cyan;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.banner ul li{
+    font-size: 20px;
+    display: inline-block;
+    padding: 5px 18px;   
+}
+
+.banner-text {
+    width: 900px;
+    display: block;
+    float:none;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    text-align: center;
+}
+
+.banner-text h1 {
+    font-size: 45px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.banner-text p{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 30px;
+    text-align: center;
+}
+
+.banner-text a{
+    color: #fff;
+    padding: 10px 30px;
+    text-decoration: none;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.banner-text a:hover{
+    background: #fff;
+    color: #000;
+    transition: 1s;
+}
+a {color: inherit;}
+
+.nav-link:visited {
+    text-decoration: none;
+}
+.nav-link:active {
+    text-decoration: none;
+}
+.nav-link:link{
+    text-decoration: none;
+}
+
+
+

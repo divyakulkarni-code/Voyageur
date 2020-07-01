@@ -124,7 +124,7 @@ class Sight extends React.Component {
         const { sights, selectedItems } = this.state;
         return  Object.entries( sights).map(([key, value]) =>
             <li key={key.toString()}>
-                <input onChange={this.handleSelectItem}
+                <input className="form-check-input" onChange={this.handleSelectItem}
                     type="checkbox"
                     checked={selectedItems.includes(key)}
                     value={key.toString()}
@@ -157,15 +157,20 @@ class Sight extends React.Component {
         // );
 
         return (<div>
-                        {cityValue}
-                        <div>
-                        <ul style = {{listStyleType: "none"}}>
-                            {this.renderItems()}
-                        </ul>
-                        </div>
-                        <div>
-                            <button className = "btn btn-primary" onClick = {this.checkStatus}> Let's Travel </button>
-                        </div>
+                        
+            <div className="form-check ">
+                <h2>“Traveling – it leaves you speechless, then turns you into a storyteller.”</h2>
+
+                <ul style={{ listStyleType: "none" }}>
+                    {this.renderItems()}
+                </ul>
+
+                <div className="button-save-itinerary">
+                    <button className="btn btn-primary" onClick={this.checkStatus}> Save Trip </button>
+                </div>
+
+            </div>
+            
                 </div>
             );
 

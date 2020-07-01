@@ -1,0 +1,113 @@
+.form-container {
+    position: absolute;
+    top: 20vh;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.form-container-register {
+    position: absolute;
+    top: 20vh;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.form-container-register {
+    position: absolute;
+    top: 20vh;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.content-container-itinerary{
+    height: auto;
+}
+.container-itinerary {
+    height: 100%;
+    position: relative;
+    top: 5vh;
+    margin-bottom: 10px;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+}
+
+.content-button {
+    position: relative;
+    flex: 1;
+    top: 7vh;
+    bottom: 3vh;
+}
+
+.jumbotron h2{
+    text-align: center;
+}
+
+.jumbotron h2{
+    text-align: center;
+}
+
+.input-elements {
+    width: 100%;
+    text-align: center;
+}
+
+.input-group {
+    width: 300px;
+    display: inline-block;
+}
+
+.pick-cities {
+    text-align: center;
+}
+
+.form-check {
+    text-align: center;
+}
+
+.form-check ul {
+    margin-top: 5px;
+    display: inline-block;
+}
+
+.form-check ul li {
+    text-align: left;
+}
+
+.button-save-itinerary {
+    text-align: center;
+}
+
+.button-save-itinerary button{
+    width: 20%;
+}
+
+.remove-sight-item {
+    margin-left: 5px;
+}
+
+.sight-name-ul {
+    list-style-type: "none";
+}
+
+.content-container-itinerary {
+    text-align: center;
+}
+
+.content-container-itinerary .row {
+    display: inline-block;
+    margin-top: 5vh;
+}
+
+.trip-info {
+    text-align: left;
+}
+
+

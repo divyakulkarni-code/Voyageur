@@ -1,3 +1,7 @@
+body {
+    font-family: 'Source Serif Pro', serif;
+  }
+
 .form-container {
     position: absolute;
     top: 20vh;
@@ -103,11 +107,27 @@
 
 .content-container-itinerary .row {
     display: inline-block;
-    margin-top: 5vh;
 }
 
 .trip-info {
     text-align: left;
 }
 
+.navbar-nav .logout {
+    float: right;
+}
 
+.trip-info {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.sight_name label {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.carousel {
+    width: 600px;
+    height: 400px;
+}

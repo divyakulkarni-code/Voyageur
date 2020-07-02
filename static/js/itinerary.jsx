@@ -99,13 +99,18 @@ class Itinerary extends React.Component {
   }
 
   addMarkerToMap(sight, trip_id, map) {
-    console.log("adding marker for sight ", sight.sight_id, trip_id);
-    console.log(parseFloat(sight.lat),parseFloat(sight.lng))
     const location =  new window.google.maps.LatLng(parseFloat(sight.lat),parseFloat(sight.lng));
-    new window.google.maps.Marker({
+    const marker = new window.google.maps.Marker({
       position: location,
       map: map,
-    }); 
+    });
+
+    marker.addListener("click", function() {
+      const infowindow = new google.maps.InfoWindow({
+        content: sight.sight_name
+      });
+      infowindow.open(map, marker);
+    });
   }
 
   createMap(key, trip_city, res) {
@@ -128,7 +133,6 @@ class Itinerary extends React.Component {
   }
 
   renderItems() {
-    console.log("this.state.itinerary", this.state.itinerary);
     
     return Object.entries(this.state.itinerary).map(([trip_id, trip]) => {
       return <div className = "container-itinerary" key={trip_id.toString()}>
@@ -137,10 +141,10 @@ class Itinerary extends React.Component {
         <tbody>
             <tr>
               <td className="trip-info">
-                <div>Trip Name : {trip[0].trip_name}</div>
-                <div>{trip[0].trip_city}</div>
-                <div>{trip[0].travel_date_from}</div>
-                <div>{trip[0].travel_date_to}</div>
+                <div><label htmlFor="tripName"> Trip Name </label> : {trip[0].trip_name}</div>
+                <div><label htmlFor="tripCity"> Trip City </label> : {trip[0].trip_city}</div>
+                <div><label htmlFor="from"> From </label> : {new Date(trip[0].travel_date_from).toISOString().split('T')[0]}</div>
+                <div><label htmlFor="to"> To </label> : {new Date(trip[0].travel_date_to).toISOString().split('T')[0]}</div>
                 <div>
                   <a href="javascript:void(0);" onClick={this.removeTrip.bind(this, trip[0].trip_id)}>
                     Delete Trip
@@ -168,11 +172,12 @@ class Itinerary extends React.Component {
                       <tbody>
                         <tr>
                           <td>
-                            {sight.sight_name}
+                          <label htmlFor="sightName">
+                            {sight.sight_name}</label>
                           </td>
                           <td>
                             <a className="remove-sight-item" href="javascript:void(0);" onClick={this.removeSightItem.bind(this, trip[0].trip_id, trip[0].traveler_id, sight.sight_id, sight.sight_name)}>
-                              Remove Sight
+                            <label htmlFor="removeSight"> Remove Sight </label>
                             </a>
                           </td>
                         </tr>
@@ -204,6 +209,11 @@ class Itinerary extends React.Component {
         <div>
           {/* {this.handleFlashMessage()} */}
         </div>
+        <div className="jumbotron">
+              <h2 className="display-4"> Upcoming Trips </h2>
+              <hr className="my-4"></hr>
+        </div>
+              
         <section className="content-container-itinerary">
           <section className="row justify-content-center">
             {this.renderItems()}

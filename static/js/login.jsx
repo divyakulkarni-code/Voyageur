@@ -13,6 +13,7 @@ class Login extends React.Component {
     render() {
         return (
             <div className = "base-container">
+                <SignInUpNavbar/>
                 
                 <section className = "content-fluid">
                     <section className = "row justify-content-center">

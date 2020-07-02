@@ -7,9 +7,9 @@ body{
 }
 
 .main {
-    height: 800px;
+    height: 100vh;
     width: 100%;
-    background-image: url("../img/landing_page.jpg");
+    background-image: url("../img/person-wearing-beige-sweater-holding-map-inside-vehicle-1252500.jpg");
     -webkit-background-size:cover;
     background-size: cover;
     background-position: center center;

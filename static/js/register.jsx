@@ -6,6 +6,7 @@ class Register extends React.Component {
     render() {
         return (
         <div className = "base-container-register" >
+         <SignInUpNavbar/>
 
         <section className = "content-fluid">
             <section className = "row justify-content-center">

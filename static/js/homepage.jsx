@@ -16,7 +16,6 @@ class Homepage extends React.Component {
     }
 
     dropdownChange(selectedCity) {
-        alert('From homepage selected city is '+ selectedCity);
         this.setState({selectedCityValue : selectedCity});
     }
 
@@ -90,7 +89,7 @@ class Homepage extends React.Component {
 
     render(){        
         return (
-            <div className="container-fluid">
+            <div className="container-fluid create_trip">
 
                 <Navbar />
                 <div className="space-conatiner"></div>

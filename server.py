@@ -66,6 +66,12 @@ def handle_login():
         flash("Username incorrect or doesn't exist")
         return redirect('/login')
 
+@app.route('/get_logged_user')
+def get_logged_user():
+    user_name = CRUD.get_user_by_user_name(session['current_user']) 
+    print(user_name.first_name)
+    return user_name.first_name
+
 @app.route('/tripcitydetails')
 def trip_city_details():
     return render_template('homepage.html')

@@ -159,7 +159,7 @@ class Sight extends React.Component {
         return (<div>
                         
             <div className="form-check ">
-                <h2>“Traveling – it leaves you speechless, then turns you into a storyteller.”</h2>
+                <h1>“Traveling – it leaves you speechless, then turns you into a storyteller.”</h1>
 
                 <ul style={{ listStyleType: "none" }}>
                     {this.renderItems()}

@@ -5,7 +5,7 @@ class Register extends React.Component {
 
     render() {
         return (
-        <div className = "base-container-register" >
+        <div className = "base-container" >
          <SignInUpNavbar/>
 
         <section className = "content-fluid">
@@ -32,7 +32,7 @@ class Register extends React.Component {
                             </div>
                             <div className = "form-group">
                                 <label htmlFor="password">Password</label>
-                                <input type = "text" className="form-control" name = "password" placeholder="Password" ></input>
+                                <input type = "password" className="form-control" name = "password" placeholder="Password" ></input>
                             </div>
                             <input type="submit" className = "btn btn-primary btn-block" value = 'Register'>
                             </input>

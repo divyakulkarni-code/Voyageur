@@ -10,7 +10,6 @@ class FavoriteCity extends React.Component {
 
     handleChange(event) {
         this.setState({value:event.target.value});
-        alert('Your selected city is: ' + event.target.value);
         this.props.handleDropdownChange(event.target.value);
       }
     

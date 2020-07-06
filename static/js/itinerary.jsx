@@ -219,13 +219,6 @@ class Itinerary extends React.Component {
             {this.renderItems()}
           </section>
         </section>
-        <section className="content-button">
-          <section className="row justify-content-center">
-            <div className='itinerary-button'>
-
-              <a href="/tripcitydetails" className="btn btn-primary">Create Trip</a>
-            </div></section>
-        </section>
       </div>
     );
   }

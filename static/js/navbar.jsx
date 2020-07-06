@@ -1,9 +1,24 @@
 class Navbar extends React.Component {  
+  constructor(){
+    super();
+
+    this.state = {userName : ''};
+  }
+
+  componentDidMount() {
+    
+    $.get('/get_logged_user', (res) => {
+      console.log("/get_logged_user response from server received.");
+      this.setState({ 
+        userName: res
+       });
+    });
+  }
     
     render () {
         return (
 
-          <div className="container">
+          <div className="container container-navbar">
             <nav className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top justify-content-between">
 
               <a className="navbar-brand" href="#">Voyageur</a>
@@ -21,6 +36,9 @@ class Navbar extends React.Component {
                 
               </ul>
               <ul className="navbar-nav logout_ul">
+              <li className="nav-item logout" >
+                 <label htmlFor = 'userName' className="nav-link">Logged in as, {this.state.userName}</label>
+                </li>
               <li className="nav-item logout" >
                   <a className="nav-link" href="/login">Log Out</a>
                 </li></ul>

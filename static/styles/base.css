@@ -35,7 +35,6 @@ body {
 .container-itinerary {
     height: 100%;
     position: relative;
-    top: 5vh;
     margin-bottom: 10px;
     background: rgb(255, 255, 255);
     padding: 30px;
@@ -50,12 +49,15 @@ body {
     bottom: 3vh;
 }
 
-.jumbotron h2{
-    text-align: center;
+.jumbotron {
+    margin-top: 2.25rem;
 }
 
 .jumbotron h2{
     text-align: center;
+}
+.navbar-brand {
+    font-size: 2rem;
 }
 
 .input-elements {
@@ -74,6 +76,7 @@ body {
 
 .form-check {
     text-align: center;
+    font-weight: 700;
 }
 
 .form-check ul {
@@ -83,6 +86,7 @@ body {
 
 .form-check ul li {
     text-align: left;
+    font-weight: 700;
 }
 
 .button-save-itinerary {
@@ -131,3 +135,18 @@ body {
     width: 600px;
     height: 400px;
 }
+
+.trip_sight {
+    height: 100%;
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.35)), url("../img/michael-discenza-5omwAMDxmkU-unsplash.jpg")
+}
+
+.container-navbar{
+    font-size : 1.25rem;
+}
+
+.create_trip {
+    height: 100%;
+    background-image: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.70)), url("../img/balazs-busznyak-eB7vkDFG8TE-unsplash.jpg")
+}
+

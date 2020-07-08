@@ -26,11 +26,25 @@ Voyageur is an interactive web application where users construct their travel it
 * HTML
 
 ## Features ##
+  * Sign up for the App
+  
+  ![Sign Up](static/Register.gif)
+  
+  * Log in 
+  
+  ![Login](static/Login.gif)
+  
 
   1. To create a trip, the user puts information about the trip and the dates. The user selects the city by clicking on the drop-down box. Here, the flask server makes a Google API call to fetch all the top sights associated with the city. 
   2. React component renders this information where the user can select the sights by clicking on these checkboxes. Once a user clicks on the save trip button, all the information about the trip on this page is then propagated to the parent component and it will post this information to the server.
+  
+  ![Create Trip](static/Create_Trip.gif)
+  
+  
   3. The server stores this information in the PostgreSQL database, a request is being sent to fetch all the stored information about the trips and sights for the user on the Upcoming Page. Maps for each trip are dynamically generated in the React component. Now the react component will make another API call to the JavaScript Map library to put sight markers utilizing Latitude and Longitude coordinates. When a user clicks on the map markers, sight names will be displayed on them.
   4. There are links to delete a trip and sight items for a created trip. If the item is last in the trip, remove item will delete the entir trip as well. 
+  
+  ![Upcoming Trip](static/Upcoming_Trip.gif)
   
  ## Installation ##
  

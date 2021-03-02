@@ -2,9 +2,6 @@
 
 Voyageur is an interactive web application where users construct their travel itineraries and locate their routes on the map.  This app helps organize, store, and plan user's travel ideas and search for the most recommended destinations in one place. Voyageur dynamically locates sights selected by the user to create a plan that maximizes the time.  In this application, users create trips by choosing the city and the most recommended sights.  Once the tour is created, the user can remove extra selected sites or can delete the entire trip.  A dynamic map is generated with all the sights located as markers on the map.
 
-## Deployment ##
-* Deployed via Lightsail on AWS
-* http://voyageur.divyakulkarni-sde.com/
 
 ## Contents ##
 * [Tech Stack](#Tech-Stack)
